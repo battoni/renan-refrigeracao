@@ -1,80 +1,141 @@
 ---
-import { BaseLink, BaseText } from "../../components/base";
-import { TheNavBar } from "../../components/unique";
-import WhatsappImage from "../../assets/images/defaultwhatsapp.svg";
+import { BaseLink, BaseText, BaseTextTypes } from '@BaseComponents';
+import { Whatsapp, HeroBG } from '@Assets';
+import { SectionsLayout } from '@Layouts';
+---
 
----  
-<section class="section_hero">
-    <TheNavBar class="navbar" />
-    <div class="hero_container">
-        <BaseText tag="h1" class="h1" variation="h1">
-            Refrigeração e Climatização de qualidade é com a gente!
-        </BaseText>
-        <div>            
-            <BaseText tag="p" class="p-hero" variation="p-hero">
-                Atendimento profisisonal especializado em Refrigeração e Climatização, soluções inteligentes para sua empresa e o conforto da sua família.
-            </BaseText>
-        </div>
-        <BaseLink href="https://wa.me/message/CVQIECXMWBIPN1" target="_blank" class="link" variation="link-navyblue">
-            <img class="whatsapp" src={WhatsappImage} >Entre em contato
-        </BaseLink>
+<SectionsLayout
+  class="section-hero"
+  id="inicio"
+>
+  <div
+    class="hero-container"
+    itemscope
+    itemtype="http://schema.org/LocalBusiness"
+  >
+    <BaseText
+      tag={BaseTextTypes.TAGS.H1}
+      itemprop="name"
+    >
+      Refrigeração e Climatização de qualidade é com a gente!
+    </BaseText>
+    <div class="hero-p">
+      <BaseText
+        tag={BaseTextTypes.TAGS.P}
+        itemprop="description"
+      >
+        Atendimento profisisonal especializado em Refrigeração e Climatização,
+        soluções inteligentes para sua empresa e o conforto da sua família.
+      </BaseText>
     </div>
-</section>
+
+    <div class="hero-btn-container">
+      <BaseLink
+        href="https://wa.me/message/CVQIECXMWBIPN1"
+        variation="blue"
+        itemprop="url"
+        target="_blank"
+      >
+        <img
+          class="whatsapp"
+          src={Whatsapp}
+          alt="Ícone do Whatsapp"
+          itemprop="image"
+        />Entre em contato
+      </BaseLink>
+
+      <BaseLink
+        href="#clientes"
+        variation="white"
+        class="hero-white-button"
+        itemprop="url"
+      >
+        Saiba Mais
+      </BaseLink>
+    </div>
+  </div>
+
+  <div
+    class="empty-space"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="hero-bg-container">
+    <img
+      src={HeroBG}
+      class="hero-bg"
+      alt="Imagem de um homen de costas com ferramentas de reparo para items de refrigeração."
+      title=""
+      itemprop="image"
+    />
+  </div>
+</SectionsLayout>
 
 <style>
-    .section_hero {
-        @apply 
-        bg-[url('../../assets/images/hero-image-mobile3.webp')] 
-        bg-cover 
-        flex 
-        flex-col 
-        h-screen 
-        justify-center 
-        min-h-[700px];
+  .section-hero {
+    @apply flex 
+    h-screen 
+    justify-center
+    items-center 
+    min-h-[700px];
+  }
+
+  .hero-container {
+    @apply flex 
+    flex-col 
+    gap-8
+    h-screen 
+    text-center
+    justify-center
+    items-center
+    min-h-[700px] 
+    max-w-4xl
+    p-6
+    z-10;
+  }
+
+  .hero-btn-container {
+    @apply flex gap-8 flex-wrap justify-center;
+  }
+
+  .hero-p {
+    @apply max-w-xl;
+  }
+
+  .hero-p > p {
+    @apply text-xl;
+  }
+
+  .hero-white-button {
+    @apply min-w-[195px];
+  }
+
+  .empty-space {
+    @apply hidden p-48;
+  }
+
+  .hero-bg {
+    @apply absolute w-screen h-screen top-0 left-0 z-0 overflow-hidden object-cover;
+  }
+
+  .whatsapp {
+    @apply w-7;
+  }
+
+  @media (min-width: 600px) {
+    .hero-container {
+      @apply gap-16;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .hero-container {
+      @apply text-left items-start;
     }
 
-    .hero_container {
-        @apply bg-black 
-        bg-opacity-30 
-        flex 
-        flex-col 
-        gap-16
-        h-screen 
-        justify-center
-        min-h-[700px] 
-        p-6;
+    .empty-space {
+      @apply flex;
     }
-
-    .whatsapp {
-        @apply hover:fill-navyBlue w-7;
-    }
-
-    @media (max-height: 600px) {
-        .h1 {
-            @apply mt-40;
-        }
-    }
-
-    @media (min-width: 450px) {
-        .section_hero {
-            @apply bg-[url('../../assets/images/hero-image-tablet.webp')]
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .section_hero {
-            @apply bg-opacity-0 
-            bg-[url('../../assets/images/hero-image.webp')];
-        }
-    }            
-
-    @media (min-width: 1440px) {
-        .section_hero {
-            @apply items-center;
-        }
-
-        .hero_container {
-            @apply w-[1400px] bg-opacity-0;
-        }
-    } 
+  }
 </style>

@@ -1,8 +1,22 @@
 ---
-import DefaultLayout from '../layouts/DefaultLayout.astro';
-import { HomeHero } from '../sections';
---- 
+import { DefaultLayout } from '@Layouts';
+import {
+  HomeHero,
+  HomeActing,
+  HomeMarketBanner,
+  HomeServices,
+  HomeFamilyBanner,
+  HomeAbout,
+  HomeCallToAction,
+} from '@Sections';
+---
 
 <DefaultLayout>
-    <HomeHero />
+  <HomeHero />
+  <HomeActing />
+  <HomeMarketBanner />
+  <HomeServices />
+  <HomeFamilyBanner />
+  <HomeAbout />
+  <HomeCallToAction />
 </DefaultLayout>

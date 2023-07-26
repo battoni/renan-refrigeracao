@@ -1,0 +1,43 @@
+---
+interface Props {
+  class?: string;
+  variation?: string;
+}
+
+const { class: className, variation } = Astro.props;
+
+const dynamicClasses = [className, variation ? `is-${variation}` : ''];
+---
+
+<div class:list={['card', dynamicClasses]}>
+  <slot />
+</div>
+
+<style>
+  .card {
+    @apply bg-gray 
+    border-transparent
+    border-solid
+    border-2
+    hover:border-navyBlue
+    flex 
+    flex-col 
+    min-h-fit
+    max-w-[430px]
+    transition-all
+    ease-in-out
+    mb-6
+    rounded-[15px]
+    p-10;
+    box-shadow: 6px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .is-service {
+    @apply bg-transparent
+    p-0
+    border-0
+    hover:border-0
+    rounded-[0];
+    box-shadow: none;
+  }
+</style>

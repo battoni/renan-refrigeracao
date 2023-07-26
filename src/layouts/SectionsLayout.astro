@@ -1,0 +1,26 @@
+---
+export interface Props {
+  class?: string;
+  id?: string;
+}
+
+const { class: className, id: idName } = Astro.props;
+const dynamicClasses = ['section', className];
+---
+
+<section
+  class:list={[dynamicClasses]}
+  id={idName}
+>
+  <slot />
+</section>
+
+<style>
+  .section {
+    @apply py-24
+    max-w-7xl
+    flex-[1_0_auto]
+    px-5
+    m-auto;
+  }
+</style>
