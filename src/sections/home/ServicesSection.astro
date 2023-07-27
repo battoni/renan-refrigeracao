@@ -114,15 +114,17 @@ const services = [
   }
 
   .card-image {
-    @apply w-full
+    @apply max-h-[350px]
+    w-full
+    max-w-[350px]
     rounded-[80px_80px_0_80px]
     object-cover;
   }
 
   .card-info {
     @apply absolute
-    bottom-[4px]
-    right-[2px]
+    bottom-[0]
+    right-[0]
     flex
     h-[170px]
     w-[170px]
@@ -152,8 +154,8 @@ const services = [
 
   @media (min-width: 360px) {
     .card-info {
-      @apply bottom-[7px]
-      right-[3px]
+      @apply bottom-[0]
+      right-[0]
       h-[230px]
       w-[230px];
     }
