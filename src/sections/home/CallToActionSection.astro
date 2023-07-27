@@ -9,7 +9,7 @@ import { SectionsLayout } from '@Layouts';
   id="contato"
 >
   <BaseText
-    class="is-blue text-center"
+    class="is-blue contact-title"
     tag={BaseTextTypes.TAGS.H6}
   >
     E aí, pronto para fazer seu orçamento?
@@ -35,6 +35,10 @@ import { SectionsLayout } from '@Layouts';
     flex-col
     items-center
     gap-16;
+  }
+
+  .contact-title {
+    @apply text-center;
   }
 
   .whatsapp {
