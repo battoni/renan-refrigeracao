@@ -7,7 +7,7 @@ const { class: className } = Astro.props;
 ---
 
 <script>
-  const hamburger = document.getElementById('hamburger');
+  const hamburger = document.querySelector('.hamburger');
 
   hamburger?.addEventListener('click', function () {
     hamburger.classList.toggle('active');
@@ -16,9 +16,8 @@ const { class: className } = Astro.props;
 
 <div class:list={[className, 'flex justify-end']}>
   <button
-    id="hamburger"
-    class="relative block h-8 w-8 focus:outline-none lg:hidden"
     aria-label="Close"
+    class="relative block h-8 w-8 focus:outline-none lg:hidden hamburger"
     role="button"
   >
     <span class="line top absolute w-4 bg-navyBlue"></span>
@@ -28,41 +27,41 @@ const { class: className } = Astro.props;
 </div>
 
 <style>
-  #hamburger .line {
+  .hamburger .line {
     height: 2px;
     transform-origin: center;
     transition: transform 0.3s ease-in-out;
   }
 
-  #hamburger .top {
+  .hamburger .top {
     top: 25%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(0deg);
     width: 75%;
   }
 
-  #hamburger .middle {
+  .hamburger .middle {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(0deg);
   }
 
-  #hamburger .bottom {
+  .hamburger .bottom {
     bottom: 25%;
     left: 50%;
     transform: translate(-50%, 50%) rotate(0deg);
     width: 75%;
   }
 
-  #hamburger.active .top {
+  .hamburger.active .top {
     transform: translate(-55%, 5px) rotate(45deg);
   }
 
-  #hamburger.active .middle {
+  .hamburger.active .middle {
     opacity: 0;
   }
 
-  #hamburger.active .bottom {
+  .hamburger.active .bottom {
     transform: translate(-55%, -8px) rotate(-45deg);
   }
 </style>

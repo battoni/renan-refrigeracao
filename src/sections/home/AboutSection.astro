@@ -1,7 +1,7 @@
 ---
+import { RenanProfile } from '@Assets';
 import { BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
-import { RenanProfile } from '@Assets';
 
 const paragraphs = [
   {
@@ -27,7 +27,7 @@ const paragraphs = [
   id="empresa"
 >
   <BaseText
-    class="is-blue text-center team-title"
+    class="is-blue team-title text-center"
     tag={BaseTextTypes.TAGS.H5}
   >
     Nosso Especialista
@@ -37,8 +37,8 @@ const paragraphs = [
     <div class="profile">
       <img
         alt="Foto de perfil do Renan. Especialista da Renan Refrigeração."
-        title="Nosso especialista"
         src={RenanProfile}
+        title="Nosso especialista"
       />
     </div>
 
@@ -66,13 +66,13 @@ const paragraphs = [
   .team-content {
     @apply flex
     flex-col
-    gap-12
-    items-center;
+    items-center
+    gap-12;
   }
 
   .profile {
-    @apply max-w-[420px]
-    w-full;
+    @apply w-full
+    max-w-[420px];
   }
 
   .content {

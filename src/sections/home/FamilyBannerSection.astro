@@ -22,9 +22,9 @@ import { SectionsLayout } from '@Layouts';
       </BaseText>
 
       <BaseLink
+        class="family-btn"
         href="https://wa.me/message/CVQIECXMWBIPN1"
         variation="blue"
-        class="family-btn"
       >
         Saiba Mais
       </BaseLink>
@@ -34,16 +34,16 @@ import { SectionsLayout } from '@Layouts';
 
 <style>
   .family-background {
-    @apply bg-cover bg-center bg-[url('../../assets/images/family-section.webp')];
+    @apply bg-[url('../../assets/images/family-section.webp')] bg-cover bg-center;
   }
 
   .family-section {
     @apply flex
-    flex-col
     h-screen
+    min-h-[700px]
+    flex-col
     items-start
-    justify-center
-    min-h-[700px];
+    justify-center;
   }
 
   .content {
@@ -51,12 +51,12 @@ import { SectionsLayout } from '@Layouts';
   }
 
   .family-title {
-    @apply text-4xl mb-12;
+    @apply mb-12 text-4xl;
   }
 
   .family-paragraph {
-    @apply max-w-[490px]
-    mb-12;
+    @apply mb-12
+    max-w-[490px];
   }
 
   .family-btn {

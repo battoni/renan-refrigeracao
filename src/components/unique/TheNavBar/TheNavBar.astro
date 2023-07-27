@@ -1,7 +1,8 @@
 ---
-import { BaseLink, BaseButtonNav } from '@BaseComponents';
-import { ComposedLinks } from '@ComposedComponents';
 import { Logo, Whatsapp } from '@Assets';
+import { BaseLink } from '@BaseComponents';
+import { ComposedLinks } from '@ComposedComponents';
+import { BaseButtonNav } from './components';
 ---
 
 <script>
@@ -45,28 +46,27 @@ import { Logo, Whatsapp } from '@Assets';
   <div class="nav">
     <a href="/">
       <img
-        src={Logo}
         alt="Renan Refrigeração logotipo"
-        title="Renan Refrigeração"
         class="logo"
+        src={Logo}
+        title="Renan Refrigeração"
       />
     </a>
 
     <ComposedLinks
-      variation="desktop-links-container"
       class="composed-links"
+      variation="desktop-links-container"
     />
 
     <BaseLink
+      class="nav-button"
       href="https://wa.me/message/CVQIECXMWBIPN1"
       target="_blank"
       variation="blue"
-      class="nav-button"
     >
       <img
-        class="whatsapp"
         alt="Whatsapp"
-        title=""
+        class="whatsapp"
         src={Whatsapp}
       />Solicite um Orçamento
     </BaseLink>
@@ -135,7 +135,7 @@ import { Logo, Whatsapp } from '@Assets';
   }
 
   .nav-container.is-mobile .composed-links {
-    @apply mt-[100px] flex opacity-100 items-center;
+    @apply mt-[100px] flex items-center opacity-100;
   }
 
   .nav-container.is-mobile .nav-button {

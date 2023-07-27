@@ -1,6 +1,6 @@
 ---
-import { BaseText, BaseTextTypes, BaseLink } from '@BaseComponents';
 import { Whatsapp } from '@Assets';
+import { BaseText, BaseTextTypes, BaseLink } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
 ---
 
@@ -25,14 +25,14 @@ import { SectionsLayout } from '@Layouts';
       </BaseText>
 
       <BaseLink
+        class="reason-btn"
         href="https://wa.me/message/CVQIECXMWBIPN1"
         variation="blue"
-        class="reason-btn"
       >
         <img
+          alt="Whatsapp"
           class="whatsapp"
           src={Whatsapp}
-          alt="Whatsapp"
           title=""
         />Saiba Mais
       </BaseLink>
@@ -47,11 +47,11 @@ import { SectionsLayout } from '@Layouts';
   }
   .reason-section {
     @apply flex
-    flex-col
     h-screen
+    min-h-[700px]
+    flex-col
     items-end
-    justify-center
-    min-h-[700px];
+    justify-center;
   }
 
   .content {
@@ -59,12 +59,12 @@ import { SectionsLayout } from '@Layouts';
   }
 
   .reason-title {
-    @apply text-4xl mb-12;
+    @apply mb-12 text-4xl;
   }
 
   .reason-paragraph {
-    @apply max-w-[490px]
-    mb-12;
+    @apply mb-12
+    max-w-[490px];
   }
 
   .reason-btn {

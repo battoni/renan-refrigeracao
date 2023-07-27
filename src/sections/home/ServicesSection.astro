@@ -1,6 +1,4 @@
 ---
-import { BaseText, BaseTextTypes, BaseCard, BaseLink } from '@BaseComponents';
-import { SectionsLayout } from '@Layouts';
 import {
   CamaraFria,
   Balcao,
@@ -9,6 +7,8 @@ import {
   ArCondicionado,
   Geladeira,
 } from '@Assets';
+import { BaseText, BaseTextTypes, BaseCard, BaseLink } from '@BaseComponents';
+import { SectionsLayout } from '@Layouts';
 
 const services = [
   {
@@ -67,9 +67,9 @@ const services = [
       services.map(({ image, alt, content, btnLink }) => (
         <BaseCard class="is-service service-card">
           <img
-            src={image}
             alt={alt}
             class="card-image"
+            src={image}
           />
 
           <div class="card-info">
@@ -82,9 +82,9 @@ const services = [
               </BaseText>
 
               <BaseLink
+                class="card-btn"
                 href={btnLink}
                 variation="green"
-                class="card-btn"
               >
                 Saiba Mais
               </BaseLink>
@@ -98,15 +98,15 @@ const services = [
 
 <style>
   .services-title {
-    @apply text-center
-    mb-16;
+    @apply mb-16
+    text-center;
   }
 
   .services-cards {
-    @apply gap-10
-    grid
+    @apply grid
     grid-cols-1
-    place-items-center;
+    place-items-center
+    gap-10;
   }
 
   .service-card {
@@ -114,31 +114,31 @@ const services = [
   }
 
   .card-image {
-    @apply object-cover
-    w-full;
+    @apply w-full
+    object-cover;
     border-radius: 80px 80px 0 80px;
   }
 
   .card-info {
     background: #012840f0;
     border-radius: 50px 50px 0 50px;
-    @apply h-[170px]
-    w-[170px]
-    flex
-    justify-center
-    items-center
-    absolute
+    @apply absolute
+    bottom-[4px]
     right-[2px]
-    bottom-[4px];
+    flex
+    h-[170px]
+    w-[170px]
+    items-center
+    justify-center;
   }
 
   .card-content {
-    @apply w-[140px]
-    text-center
-    flex
+    @apply flex
+    w-[140px]
     flex-col
     items-center
-    gap-[10px];
+    gap-[10px]
+    text-center;
   }
 
   .card-paragraph {
@@ -146,16 +146,16 @@ const services = [
   }
 
   .card-btn {
-    @apply text-xs
-    hidden;
+    @apply hidden
+    text-xs;
   }
 
   @media (min-width: 360px) {
     .card-info {
-      @apply h-[230px]
-      w-[230px]
+      @apply bottom-[7px]
       right-[3px]
-      bottom-[7px];
+      h-[230px]
+      w-[230px];
     }
 
     .card-paragraph {

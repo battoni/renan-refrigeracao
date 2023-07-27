@@ -1,8 +1,8 @@
 ---
-import { BaseText, BaseTextTypes } from '@BaseComponents';
-import { ComposedSocial } from './components';
 import { LogoWhite } from '@Assets';
+import { BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
+import { ComposedSocial } from './components';
 
 const menuItems = [
   {
@@ -33,9 +33,9 @@ const menuItems = [
     <SectionsLayout class="footer-content">
       <div class="logo-section">
         <img
+          alt="Logo da Empresa Renan Refrigeração"
           class="logo"
           src={LogoWhite}
-          alt="Logo da Empresa Renan Refrigeração"
           title="Renan Refrigeração"
         />
       </div>
@@ -63,7 +63,7 @@ const menuItems = [
 
   <section class="copy">
     <BaseText
-      class="text-center copy-text"
+      class="copy-text text-center"
       tag={BaseTextTypes.TAGS.P}
     >
       &copy; Todos os direitos reservados. Renan Refrigeração 2023. Desenvolvido
@@ -80,11 +80,11 @@ const menuItems = [
 
 <style>
   .footer {
-    @apply bg-navyBlue
+    @apply flex
   min-h-[430px]
   w-screen
-  flex
-  items-center;
+  items-center
+  bg-navyBlue;
   }
 
   .footer-content {
@@ -99,12 +99,12 @@ const menuItems = [
   }
 
   .menu-items {
-    @apply text-neutral
-  text-center;
+    @apply text-center
+  text-neutral;
   }
 
   .menu-item {
-    @apply pt-4 mb-4;
+    @apply mb-4 pt-4;
   }
 
   .battoni {
@@ -112,11 +112,11 @@ const menuItems = [
   }
 
   .copy {
-    @apply bg-darkGreen
+    @apply flex
   h-[100px]
-  flex
   items-center
   justify-center
+  bg-darkGreen
   px-5;
   }
 
@@ -127,14 +127,14 @@ const menuItems = [
   @media (min-width: 992px) {
     .footer-content {
       @apply flex-row
-    justify-between
-    items-center;
+    items-center
+    justify-between;
     }
 
     .menu-items {
       column-count: 2;
-      @apply text-left 
-    gap-16;
+      @apply gap-16 
+    text-left;
     }
 
     .copy {

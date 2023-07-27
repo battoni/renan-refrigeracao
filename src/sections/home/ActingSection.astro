@@ -1,6 +1,4 @@
 ---
-import { BaseCard, BaseText, BaseTextTypes } from '@BaseComponents';
-import { SectionsLayout } from '@Layouts';
 import {
   CompanyIcon,
   HotelIcon,
@@ -9,6 +7,8 @@ import {
   MarketIcon,
   ShopIcon,
 } from '@Assets';
+import { BaseCard, BaseText, BaseTextTypes } from '@BaseComponents';
+import { SectionsLayout } from '@Layouts';
 
 const clients = [
   {
@@ -61,7 +61,7 @@ const clients = [
   id="clientes"
 >
   <BaseText
-    class="is-blue text-center clients-title"
+    class="is-blue clients-title text-center"
     tag={BaseTextTypes.TAGS.H2}
   >
     Refrigeração e Climatização onde quer que seja
@@ -72,9 +72,9 @@ const clients = [
       clients.map(({ icon, alt, title, paragraph }) => (
         <BaseCard class="client-card">
           <img
-            src={icon}
             alt={alt}
             class="card-image"
+            src={icon}
           />
 
           <BaseText
@@ -101,34 +101,34 @@ const clients = [
     @apply mb-16;
   }
   .places-cards {
-    @apply gap-10
-    grid
+    @apply grid
     grid-cols-1
-    place-items-center;
+    place-items-center
+    gap-10;
   }
 
   .client-card {
     @apply flex
-    flex-col
     h-auto
+    max-w-[100%]
+    flex-col
     items-center
-    justify-center
-    max-w-[100%];
+    justify-center;
   }
 
   .card-image {
-    @apply max-w-[64px]
-    mb-5;
+    @apply mb-5
+    max-w-[64px];
   }
 
   .card-title {
-    @apply text-center
-    mb-5;
+    @apply mb-5
+    text-center;
   }
 
   .card-paragraph {
-    @apply text-center
-    max-w-[350px];
+    @apply max-w-[350px]
+    text-center;
   }
 
   @media (min-width: 768px) {
