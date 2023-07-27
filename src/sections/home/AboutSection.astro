@@ -59,6 +59,9 @@ const paragraphs = [
 </SectionsLayout>
 
 <style>
+  .team-section {
+    @apply pb-0;
+  }
   .team-title {
     @apply mb-16
     text-center;
@@ -81,10 +84,20 @@ const paragraphs = [
   }
 
   .team-paragraph {
-    @apply mb-6;
+    @apply mb-6
+    text-justify;
+  }
+
+  @media (min-width: 768px) {
+    .team-paragraph {
+      @apply text-left;
+    }
   }
 
   @media (min-width: 992px) {
+    .team-section {
+      @apply pb-24;
+    }
     .team-content {
       @apply flex-row;
     }
