@@ -4,10 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        nova: ['NovaFlat', 'ui-sans-serif'],
-        ubuntu: ['Ubuntu-Regular', 'ui-sans-serif'],
-        ubuntuLight: ['Ubuntu-Light', 'ui-sans-serif'],
-        ubuntuBold: ['Ubuntu-Bold', 'ui-sans-serif'],
+        nova: ['Nova Flat', 'ui-sans-serif'],
+        ubuntu: ['Ubuntu', 'ui-sans-serif'],
       },
       colors: {
         darkGreen: 'rgb(var(--darkGreen) / <alpha-value>)',
