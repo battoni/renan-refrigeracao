@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components';
 import { Logo, Whatsapp } from '@Assets';
 import { BaseLink } from '@BaseComponents';
 import { ComposedLinks } from '@ComposedComponents';
@@ -49,7 +50,7 @@ import { BaseButtonNav } from './components';
 <nav class="nav-container isNavBar">
   <div class="nav">
     <a href="/">
-      <img
+      <Image
         alt="Renan Refrigeração logotipo"
         class="logo"
         src={Logo}
@@ -68,7 +69,7 @@ import { BaseButtonNav } from './components';
       target="_blank"
       variation="blue"
     >
-      <img
+      <Image
         alt="Whatsapp"
         class="whatsapp"
         src={Whatsapp}
