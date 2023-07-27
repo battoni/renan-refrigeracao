@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components';
 import {
   CompanyIcon,
   HotelIcon,
@@ -71,7 +72,7 @@ const clients = [
     {
       clients.map(({ icon, alt, title, paragraph }) => (
         <BaseCard class="client-card">
-          <img
+          <Image
             alt={alt}
             class="card-image"
             src={icon}

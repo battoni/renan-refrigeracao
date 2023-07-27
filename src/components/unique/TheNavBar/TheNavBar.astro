@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components';
 import { Logo, Whatsapp } from '@Assets';
 import { BaseLink } from '@BaseComponents';
 import { ComposedLinks } from '@ComposedComponents';
@@ -6,7 +7,7 @@ import { BaseButtonNav } from './components';
 ---
 
 <script>
-  const isNavBar = document.getElementById('isNavBar');
+  const isNavBar = document.querySelector('.isNavBar');
   if (isNavBar) {
     const toggle = document.querySelector('.js-toggle-navbar');
 
@@ -17,6 +18,13 @@ import { BaseButtonNav } from './components';
 
       if (nav) {
         const isEntering = !nav.classList.contains('is-slide');
+        const composedLinks = document.querySelectorAll('.composed-links a');
+
+        composedLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            toggleNavbar();
+          });
+        });
 
         if (isEntering) {
           nav.classList.remove('is-invisible');
@@ -39,13 +47,10 @@ import { BaseButtonNav } from './components';
   }
 </script>
 
-<nav
-  class="nav-container"
-  id="isNavBar"
->
+<nav class="nav-container isNavBar">
   <div class="nav">
     <a href="/">
-      <img
+      <Image
         alt="Renan Refrigeração logotipo"
         class="logo"
         src={Logo}
@@ -64,7 +69,7 @@ import { BaseButtonNav } from './components';
       target="_blank"
       variation="blue"
     >
-      <img
+      <Image
         alt="Whatsapp"
         class="whatsapp"
         src={Whatsapp}

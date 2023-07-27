@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components';
 import {
   CamaraFria,
   Balcao,
@@ -66,7 +67,7 @@ const services = [
     {
       services.map(({ image, alt, content, btnLink }) => (
         <BaseCard class="is-service service-card">
-          <img
+          <Image
             alt={alt}
             class="card-image"
             src={image}

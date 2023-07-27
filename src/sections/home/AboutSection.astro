@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components';
 import { RenanProfile } from '@Assets';
 import { BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
@@ -35,7 +36,7 @@ const paragraphs = [
 
   <section class="team-content">
     <div class="profile">
-      <img
+      <Image
         alt="Foto de perfil do Renan. Especialista da Renan Refrigeração."
         src={RenanProfile}
         title="Nosso especialista"

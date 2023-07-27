@@ -1,4 +1,5 @@
 ---
+import { Image } from '@astrojs/image/components';
 import { Whatsapp, HeroBG } from '@Assets';
 import { BaseLink, BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
@@ -36,7 +37,7 @@ import { SectionsLayout } from '@Layouts';
         target="_blank"
         variation="blue"
       >
-        <img
+        <Image
           alt="Ícone do Whatsapp"
           class="whatsapp"
           itemprop="image"
@@ -62,7 +63,7 @@ import { SectionsLayout } from '@Layouts';
   </div>
 
   <div class="hero-bg-container">
-    <img
+    <Image
       src={HeroBG}
       class="hero-bg"
       alt="Imagem de um homen de costas com ferramentas de reparo para items de refrigeração."
