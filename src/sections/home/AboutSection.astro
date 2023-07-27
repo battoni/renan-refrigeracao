@@ -28,13 +28,13 @@ const paragraphs = [
   id="empresa"
 >
   <BaseText
-    class="is-blue team-title text-center"
+    class="team-title"
     tag={BaseTextTypes.TAGS.H5}
   >
     Nosso Especialista
   </BaseText>
 
-  <section class="team-content">
+  <section class="is-blue team-content">
     <div class="profile">
       <Image
         alt="Foto de perfil do Renan. Especialista da Renan Refrigeração."
@@ -60,8 +60,12 @@ const paragraphs = [
 </SectionsLayout>
 
 <style>
+  .team-section {
+    @apply pb-0;
+  }
   .team-title {
-    @apply mb-16;
+    @apply mb-16
+    text-center;
   }
 
   .team-content {
@@ -81,10 +85,20 @@ const paragraphs = [
   }
 
   .team-paragraph {
-    @apply mb-6;
+    @apply mb-6
+    text-justify;
+  }
+
+  @media (min-width: 768px) {
+    .team-paragraph {
+      @apply text-left;
+    }
   }
 
   @media (min-width: 992px) {
+    .team-section {
+      @apply pb-24;
+    }
     .team-content {
       @apply flex-row;
     }

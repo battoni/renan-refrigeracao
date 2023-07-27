@@ -13,6 +13,7 @@ module.exports = {
         lightGreen: 'rgb(var(--lightGreen) / <alpha-value>)',
         mediumGreen: 'rgb(var(--mediumGreen) / <alpha-value>)',
         navyBlue: 'rgb(var(--navyBlue) / <alpha-value>)',
+        navyBlueCard: 'var(--navyBlueCard)',
         neutral: 'rgb(var(--neutral) / <alpha-value>)',
         whiteOpacity: 'var(--white-opacity)',
       },

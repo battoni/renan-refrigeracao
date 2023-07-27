@@ -115,22 +115,24 @@ const services = [
   }
 
   .card-image {
-    @apply w-full
+    @apply max-h-[350px]
+    w-full
+    max-w-[350px]
+    rounded-[80px_80px_0_80px]
     object-cover;
-    border-radius: 80px 80px 0 80px;
   }
 
   .card-info {
-    background: #012840f0;
-    border-radius: 50px 50px 0 50px;
     @apply absolute
-    bottom-[4px]
-    right-[2px]
+    bottom-[0]
+    right-[0]
     flex
     h-[170px]
     w-[170px]
     items-center
-    justify-center;
+    justify-center
+    rounded-[50px_50px_0_50px]
+    bg-navyBlueCard;
   }
 
   .card-content {
@@ -153,8 +155,8 @@ const services = [
 
   @media (min-width: 360px) {
     .card-info {
-      @apply bottom-[7px]
-      right-[3px]
+      @apply bottom-[0]
+      right-[0]
       h-[230px]
       w-[230px];
     }
