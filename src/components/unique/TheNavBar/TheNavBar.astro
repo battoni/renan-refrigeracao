@@ -6,7 +6,7 @@ import { BaseButtonNav } from './components';
 ---
 
 <script>
-  const isNavBar = document.getElementById('isNavBar');
+  const isNavBar = document.querySelector('.isNavBar');
   if (isNavBar) {
     const toggle = document.querySelector('.js-toggle-navbar');
 
@@ -17,6 +17,13 @@ import { BaseButtonNav } from './components';
 
       if (nav) {
         const isEntering = !nav.classList.contains('is-slide');
+        const composedLinks = document.querySelectorAll('.composed-links a');
+
+        composedLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            toggleNavbar();
+          });
+        });
 
         if (isEntering) {
           nav.classList.remove('is-invisible');
@@ -39,10 +46,7 @@ import { BaseButtonNav } from './components';
   }
 </script>
 
-<nav
-  class="nav-container"
-  id="isNavBar"
->
+<nav class="nav-container isNavBar">
   <div class="nav">
     <a href="/">
       <img
