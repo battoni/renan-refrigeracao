@@ -4,6 +4,29 @@ import { Logo, Whatsapp } from '@Assets';
 import { BaseLink } from '@BaseComponents';
 import { ComposedLinks } from '@ComposedComponents';
 import { BaseButtonNav } from './components';
+
+const navbarItems = [
+  {
+    label: 'Início',
+    href: '#inicio',
+  },
+  {
+    label: 'Clientes',
+    href: '#clientes',
+  },
+  {
+    label: 'Serviços',
+    href: '#servicos',
+  },
+  {
+    label: 'Empresa',
+    href: '#empresa',
+  },
+  {
+    label: 'Contato',
+    href: '#contato',
+  },
+];
 ---
 
 <script>
@@ -61,6 +84,7 @@ import { BaseButtonNav } from './components';
     <ComposedLinks
       class="composed-links"
       variation="desktop-links-container"
+      links={navbarItems}
     />
 
     <BaseLink
