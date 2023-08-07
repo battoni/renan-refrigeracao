@@ -1,9 +1,12 @@
 ---
+import { Image } from '@astrojs/image/components';
+import { Logo } from '@Assets';
 import { BaseLink, BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
 ---
 
 <SectionsLayout class="section-error">
+  <Image src={Logo} alt="Renan Refrigeração" />
   <BaseText
     tag={BaseTextTypes.TAGS.H1}
     variation="blue"
@@ -17,7 +20,7 @@ import { SectionsLayout } from '@Layouts';
   </BaseText>
 
   <BaseLink
-    href="#"
+    href="/"
     variation="blue"
   >
     Retornar
