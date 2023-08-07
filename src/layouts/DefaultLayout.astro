@@ -1,6 +1,6 @@
 ---
-import DependenciesLayout from './DependenciesLayout.astro';
 import { TheFooter, TheNavBar, TheGTag } from '@UniqueComponents';
+import DependenciesLayout from './DependenciesLayout.astro';
 import ScriptsLayout from './ScriptsLayout.astro';
 
 export interface Props {
@@ -24,152 +24,163 @@ const props = {
   <head>
     <ScriptsLayout />
     <meta
-      http-equiv="Content-Type"
       content="text/html; charset=utf-8"
+      http-equiv="Content-Type"
     />
     <link
+      href="/favicon/favicon.ico"
       rel="icon"
       type="image/x-icon"
-      href="/favicon/favicon.ico"
     />
     <meta
-      name="title"
       content={props.title}
+      name="title"
     />
     <meta
-      name="description"
       content={props.description}
+      name="description"
     />
     <meta
-      name="viewport"
       content="width=device-width"
+      name="viewport"
     />
     <meta
-      name="generator"
       content={Astro.generator}
+      name="generator"
     />
     <link
-      rel="sitemap"
       href="/sitemap-index.xml"
+      rel="sitemap"
     />
     <title>{props.title}</title>
 
     <link
+      href="/favicon/apple-icon-57x57.png"
       rel="apple-touch-icon"
       sizes="57x57"
-      href="/favicon/apple-icon-57x57.png"
     />
     <link
+      href="/favicon/apple-icon-60x60.png"
       rel="apple-touch-icon"
       sizes="60x60"
-      href="/favicon/apple-icon-60x60.png"
     />
     <link
+      href="/favicon/apple-icon-72x72.png"
       rel="apple-touch-icon"
       sizes="72x72"
-      href="/favicon/apple-icon-72x72.png"
     />
     <link
+      href="/favicon/apple-icon-76x76.png"
       rel="apple-touch-icon"
       sizes="76x76"
-      href="/favicon/apple-icon-76x76.png"
     />
     <link
+      href="/favicon/apple-icon-114x114.png"
       rel="apple-touch-icon"
       sizes="114x114"
-      href="/favicon/apple-icon-114x114.png"
     />
     <link
+      href="/favicon/apple-icon-120x120.png"
       rel="apple-touch-icon"
       sizes="120x120"
-      href="/favicon/apple-icon-120x120.png"
     />
     <link
+      href="/favicon/apple-icon-144x144.png"
       rel="apple-touch-icon"
       sizes="144x144"
-      href="/favicon/apple-icon-144x144.png"
     />
     <link
+      href="/favicon/apple-icon-152x152.png"
       rel="apple-touch-icon"
       sizes="152x152"
-      href="/favicon/apple-icon-152x152.png"
     />
     <link
+      href="/favicon/apple-icon-180x180.png"
       rel="apple-touch-icon"
       sizes="180x180"
-      href="/favicon/apple-icon-180x180.png"
     />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="192x192"
       href="/favicon/android-icon-192x192.png"
+      rel="icon"
+      sizes="192x192"
+      type="image/png"
     />
     <link
+      href="/favicon/favicon-32x32.png"
       rel="icon"
-      type="image/png"
       sizes="32x32"
-      href="/favicon/favicon/favicon-32x32.png"
+      type="image/png"
     />
     <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
       href="/favicon/favicon-96x96.png"
-    />
-    <link
       rel="icon"
+      sizes="96x96"
       type="image/png"
-      sizes="16x16"
-      href="/favicon/favicon-16x16.png"
     />
     <link
-      rel="manifest"
-      href="/favicon/manifest.json"
+      href="/favicon/favicon-16x16.png"
+      rel="icon"
+      sizes="16x16"
+      type="image/png"
     />
+    <link
+      href="/favicon/manifest.json"
+      rel="manifest"
+    />
+
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Flat&family=Ubuntu:wght@300;400;700&display=swap" rel="stylesheet">
 
     <!-- Open Graph / Facebook -->
     <meta
-      property="og:type"
       content="website"
+      property="og:type"
     />
     <meta
-      property="og:url"
       content="https://renanrefrigeracao.com.br"
+      property="og:url"
     />
     <meta
-      property="og:title"
       content={props.title}
+      property="og:title"
     />
     <meta
-      property="og:description"
       content={props.description}
+      property="og:description"
     />
     <meta
-      property="og:image"
       content="https://renanrefrigeracao.com.br/renan-refrigeracao-share-thumb.png"
+      property="og:image"
     />
 
     <!-- Twitter -->
     <meta
-      property="twitter:card"
       content="summary_large_image"
+      property="twitter:card"
     />
     <meta
-      property="twitter:url"
       content="https://renanrefrigeracao.com.br"
+      property="twitter:url"
     />
     <meta
-      property="twitter:title"
       content="Renan Refrigeração | Serviços de Refrigeração e Climatização"
+      property="twitter:title"
     />
     <meta
-      property="twitter:description"
       content={props.description}
+      property="twitter:description"
     />
     <meta
-      property="twitter:image"
       content="https://renanrefrigeracao.com.br/renan-refrigeracao-share-thumb.png"
+      property="twitter:image"
     />
   </head>
 
@@ -186,11 +197,11 @@ const props = {
       <TheFooter />
     </DependenciesLayout>
     <style>
-      body {
-        @apply flex min-h-screen flex-col items-center;
+      .body {
+        @apply flex min-h-screen flex-col items-center overflow-x-hidden;
       }
 
-      main {
+      .main {
         @apply w-screen;
       }
     </style>

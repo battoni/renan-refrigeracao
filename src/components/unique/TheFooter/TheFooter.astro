@@ -1,29 +1,31 @@
 ---
-import { BaseText, BaseTextTypes } from '@BaseComponents';
-import { ComposedSocial } from './components';
+import { Image } from '@astrojs/image/components';
 import { LogoWhite } from '@Assets';
+import { BaseText, BaseTextTypes } from '@BaseComponents';
+import { ComposedLinks } from '@ComposedComponents';
 import { SectionsLayout } from '@Layouts';
+import { ComposedSocial } from './components';
 
-const menuItems = [
+const footerItems = [
   {
-    text: 'Início',
-    url: '#inicio',
+    label: 'Início',
+    href: '#inicio',
   },
   {
-    text: 'Quem atendemos',
-    url: '#clientes',
+    label: 'Quem atendemos',
+    href: '#clientes',
   },
   {
-    text: 'Nossos Serviços',
-    url: '#servicos',
+    label: 'Nossos Serviços',
+    href: '#servicos',
   },
   {
-    text: 'Nosso Especialista',
-    url: '#empresa',
+    label: 'Nosso Especialista',
+    href: '#empresa',
   },
   {
-    text: 'Contato',
-    url: '#contato',
+    label: 'Contato',
+    href: '#contato',
   },
 ];
 ---
@@ -32,30 +34,19 @@ const menuItems = [
   <section class="footer">
     <SectionsLayout class="footer-content">
       <div class="logo-section">
-        <img
-          class="logo"
-          src={LogoWhite}
+        <Image
           alt="Logo da Empresa Renan Refrigeração"
+          class="logo"
           title="Renan Refrigeração"
+          src={LogoWhite}
         />
       </div>
 
-      <div class="menu-section">
-        <ul class="menu-items">
-          {
-            menuItems.map(({ text, url }) => (
-              <li class="menu-item">
-                <a
-                  class="text"
-                  href={url}
-                >
-                  {text}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </div>
+      <ComposedLinks
+        class="menu-item"
+        variation="mobile-links-container"
+        links={footerItems}
+      />
 
       <ComposedSocial />
     </SectionsLayout>
@@ -63,7 +54,7 @@ const menuItems = [
 
   <section class="copy">
     <BaseText
-      class="text-center copy-text"
+      class="copy-text text-center"
       tag={BaseTextTypes.TAGS.P}
     >
       &copy; Todos os direitos reservados. Renan Refrigeração 2023. Desenvolvido
@@ -80,11 +71,11 @@ const menuItems = [
 
 <style>
   .footer {
-    @apply bg-navyBlue
+    @apply flex
   min-h-[430px]
   w-screen
-  flex
-  items-center;
+  items-center
+  bg-navyBlue;
   }
 
   .footer-content {
@@ -98,13 +89,8 @@ const menuItems = [
     @apply w-[270px];
   }
 
-  .menu-items {
-    @apply text-neutral
-  text-center;
-  }
-
   .menu-item {
-    @apply pt-4 mb-4;
+    @apply mb-10 items-center gap-4 text-white;
   }
 
   .battoni {
@@ -112,11 +98,11 @@ const menuItems = [
   }
 
   .copy {
-    @apply bg-darkGreen
+    @apply flex
   h-[100px]
-  flex
   items-center
   justify-center
+  bg-darkGreen
   px-5;
   }
 
@@ -127,14 +113,14 @@ const menuItems = [
   @media (min-width: 992px) {
     .footer-content {
       @apply flex-row
-    justify-between
-    items-center;
+    items-center
+    justify-between;
     }
 
-    .menu-items {
-      column-count: 2;
-      @apply text-left 
-    gap-16;
+    .menu-item {
+      @apply mb-0 
+      items-start 
+      gap-8;
     }
 
     .copy {

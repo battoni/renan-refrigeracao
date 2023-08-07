@@ -1,0 +1,98 @@
+---
+export interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+
+  hamburger?.addEventListener('click', function () {
+    hamburger.classList.toggle('active');
+  });
+</script>
+
+<div class:list={[className, 'button-nav-container']}>
+  <button
+    aria-label="Close"
+    class="hamburger"
+    role="button"
+  >
+    <span class="line top"></span>
+    <span class="line middle"></span>
+    <span class="line bottom"></span>
+  </button>
+</div>
+
+<style>
+  .button-nav-container {
+    @apply flex
+    justify-end;
+  }
+
+  .hamburger {
+    @apply relative 
+    block 
+    h-8 
+    w-8 
+    focus:outline-none 
+    lg:hidden;
+  }
+
+  .line {
+    @apply absolute 
+    bg-navyBlue;
+  }
+
+  .top {
+    @apply w-4;
+  }
+
+  .middle {
+    @apply w-6;
+  }
+
+  .bottom {
+    @apply w-8;
+  }
+
+  .hamburger .line {
+    height: 2px;
+    transform-origin: center;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .hamburger .top {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    width: 75%;
+  }
+
+  .hamburger .middle {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  .hamburger .bottom {
+    bottom: 25%;
+    left: 50%;
+    transform: translate(-50%, 50%) rotate(0deg);
+    width: 75%;
+  }
+
+  .hamburger.active .top {
+    transform: translate(-55%, 5px) rotate(45deg);
+  }
+
+  .hamburger.active .middle {
+    opacity: 0;
+  }
+
+  .hamburger.active .bottom {
+    transform: translate(-55%, -8px) rotate(-45deg);
+  }
+</style>

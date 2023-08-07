@@ -1,11 +1,36 @@
 ---
-import { BaseLink, BaseButtonNav } from '@BaseComponents';
-import { ComposedLinks } from '@ComposedComponents';
+import { Image } from '@astrojs/image/components';
 import { Logo, Whatsapp } from '@Assets';
+import { BaseLink } from '@BaseComponents';
+import { ComposedLinks } from '@ComposedComponents';
+import { BaseButtonNav } from './components';
+
+const navbarItems = [
+  {
+    label: 'Início',
+    href: '#inicio',
+  },
+  {
+    label: 'Clientes',
+    href: '#clientes',
+  },
+  {
+    label: 'Serviços',
+    href: '#servicos',
+  },
+  {
+    label: 'Empresa',
+    href: '#empresa',
+  },
+  {
+    label: 'Contato',
+    href: '#contato',
+  },
+];
 ---
 
 <script>
-  const isNavBar = document.getElementById('isNavBar');
+  const isNavBar = document.querySelector('.isNavBar');
   if (isNavBar) {
     const toggle = document.querySelector('.js-toggle-navbar');
 
@@ -16,6 +41,13 @@ import { Logo, Whatsapp } from '@Assets';
 
       if (nav) {
         const isEntering = !nav.classList.contains('is-slide');
+        const composedLinks = document.querySelectorAll('.composed-links a');
+
+        composedLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            toggleNavbar();
+          });
+        });
 
         if (isEntering) {
           nav.classList.remove('is-invisible');
@@ -38,35 +70,32 @@ import { Logo, Whatsapp } from '@Assets';
   }
 </script>
 
-<nav
-  class="nav-container"
-  id="isNavBar"
->
+<nav class="nav-container isNavBar">
   <div class="nav">
     <a href="/">
-      <img
-        src={Logo}
+      <Image
         alt="Renan Refrigeração logotipo"
-        title="Renan Refrigeração"
         class="logo"
+        title="Renan Refrigeração"
+        src={Logo}
       />
     </a>
 
     <ComposedLinks
-      variation="desktop-links-container"
       class="composed-links"
+      variation="desktop-links-container"
+      links={navbarItems}
     />
 
     <BaseLink
+      class="nav-button"
       href="https://wa.me/message/CVQIECXMWBIPN1"
       target="_blank"
       variation="blue"
-      class="nav-button"
     >
-      <img
-        class="whatsapp"
+      <Image
         alt="Whatsapp"
-        title=""
+        class="whatsapp"
         src={Whatsapp}
       />Solicite um Orçamento
     </BaseLink>
@@ -85,8 +114,8 @@ import { Logo, Whatsapp } from '@Assets';
     items-center
     justify-around
     bg-whiteOpacity
-    align-middle;
-    transition: height 0.3s ease-in-out;
+    align-middle
+    transition-[height] duration-[0.3s] ease-[ease-in-out];
   }
 
   .nav {
@@ -104,8 +133,7 @@ import { Logo, Whatsapp } from '@Assets';
   }
 
   .logo {
-    @apply fixed top-4 flex w-[170px];
-    transition: all 0.3s ease-in-out;
+    @apply fixed top-4 flex w-[170px] transition-all duration-[0.3s] ease-[ease-in-out];
   }
 
   .menu-bar {
@@ -114,8 +142,8 @@ import { Logo, Whatsapp } from '@Assets';
 
   .composed-links,
   .nav-button {
-    @apply fixed left-[-100%] opacity-0;
-    transition: left 0.2s ease-in-out, opacity 0.3s ease-in;
+    @apply fixed left-[-100%]
+    opacity-0 transition-[left,opacity] duration-[0.2s] ease-[ease-in-out];
   }
 
   .nav-container.is-slide .composed-links {
@@ -135,12 +163,12 @@ import { Logo, Whatsapp } from '@Assets';
   }
 
   .nav-container.is-mobile .composed-links {
-    @apply mt-[100px] flex opacity-100 items-center;
+    @apply mt-[100px] flex items-center opacity-100;
   }
 
   .nav-container.is-mobile .nav-button {
-    @apply absolute bottom-10 block translate-x-[-50%] opacity-100;
-    transition: opacity 0.3s ease-in;
+    @apply absolute bottom-10 block translate-x-[-50%] opacity-100
+    transition-opacity duration-[0.3s] ease-[ease-in];
   }
 
   .nav-container.is-invisible .composed-links,
@@ -163,8 +191,7 @@ import { Logo, Whatsapp } from '@Assets';
 
     .composed-links,
     .nav-button {
-      @apply flex opacity-100 transition-all duration-100 ease-in-out;
-      position: initial;
+      @apply static flex opacity-100 transition-all duration-100 ease-in-out;
     }
   }
 </style>

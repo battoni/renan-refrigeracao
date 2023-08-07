@@ -1,6 +1,7 @@
 ---
-import { BaseText, BaseTextTypes, BaseLink } from '@BaseComponents';
+import { Image } from '@astrojs/image/components';
 import { Whatsapp } from '@Assets';
+import { BaseText, BaseTextTypes, BaseLink } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
 ---
 
@@ -9,7 +10,7 @@ import { SectionsLayout } from '@Layouts';
   id="contato"
 >
   <BaseText
-    class="is-blue text-center"
+    class="is-blue contact-title"
     tag={BaseTextTypes.TAGS.H6}
   >
     E aí, pronto para fazer seu orçamento?
@@ -19,10 +20,10 @@ import { SectionsLayout } from '@Layouts';
     href="https://wa.me/message/CVQIECXMWBIPN1"
     variation="blue"
   >
-    <img
+    <Image
+      alt="Whatsapp"
       class="whatsapp"
       src={Whatsapp}
-      alt="Whatsapp"
       title=""
     />
     Iniciar Orçamento
@@ -35,6 +36,10 @@ import { SectionsLayout } from '@Layouts';
     flex-col
     items-center
     gap-16;
+  }
+
+  .contact-title {
+    @apply text-center;
   }
 
   .whatsapp {

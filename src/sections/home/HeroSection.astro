@@ -1,6 +1,7 @@
 ---
-import { BaseLink, BaseText, BaseTextTypes } from '@BaseComponents';
+import { Image } from '@astrojs/image/components';
 import { Whatsapp, HeroBG } from '@Assets';
+import { BaseLink, BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
 ---
 
@@ -14,15 +15,15 @@ import { SectionsLayout } from '@Layouts';
     itemtype="http://schema.org/LocalBusiness"
   >
     <BaseText
-      tag={BaseTextTypes.TAGS.H1}
       itemprop="name"
+      tag={BaseTextTypes.TAGS.H1}
     >
       Refrigeração e Climatização de qualidade é com a gente!
     </BaseText>
     <div class="hero-p">
       <BaseText
-        tag={BaseTextTypes.TAGS.P}
         itemprop="description"
+        tag={BaseTextTypes.TAGS.P}
       >
         Atendimento profisisonal especializado em Refrigeração e Climatização,
         soluções inteligentes para sua empresa e o conforto da sua família.
@@ -32,23 +33,23 @@ import { SectionsLayout } from '@Layouts';
     <div class="hero-btn-container">
       <BaseLink
         href="https://wa.me/message/CVQIECXMWBIPN1"
-        variation="blue"
         itemprop="url"
         target="_blank"
+        variation="blue"
       >
-        <img
-          class="whatsapp"
-          src={Whatsapp}
+        <Image
           alt="Ícone do Whatsapp"
+          class="whatsapp"
           itemprop="image"
+          src={Whatsapp}
         />Entre em contato
       </BaseLink>
 
       <BaseLink
-        href="#clientes"
-        variation="white"
         class="hero-white-button"
+        href="#clientes"
         itemprop="url"
+        variation="white"
       >
         Saiba Mais
       </BaseLink>
@@ -62,7 +63,7 @@ import { SectionsLayout } from '@Layouts';
   </div>
 
   <div class="hero-bg-container">
-    <img
+    <Image
       src={HeroBG}
       class="hero-bg"
       alt="Imagem de um homen de costas com ferramentas de reparo para items de refrigeração."
@@ -76,27 +77,27 @@ import { SectionsLayout } from '@Layouts';
   .section-hero {
     @apply flex 
     h-screen 
-    justify-center
+    min-h-[700px]
     items-center 
-    min-h-[700px];
+    justify-center;
   }
 
   .hero-container {
-    @apply flex 
-    flex-col 
-    gap-8
-    h-screen 
-    text-center
-    justify-center
-    items-center
+    @apply z-10 
+    flex 
+    h-screen
     min-h-[700px] 
     max-w-4xl
+    flex-col
+    items-center
+    justify-center 
+    gap-8
     p-6
-    z-10;
+    text-center;
   }
 
   .hero-btn-container {
-    @apply flex gap-8 flex-wrap justify-center;
+    @apply flex flex-wrap justify-center gap-8;
   }
 
   .hero-p {
@@ -116,7 +117,7 @@ import { SectionsLayout } from '@Layouts';
   }
 
   .hero-bg {
-    @apply absolute w-screen h-screen top-0 left-0 z-0 overflow-hidden object-cover;
+    @apply absolute left-0 top-0 z-0 h-screen w-screen overflow-hidden object-cover;
   }
 
   .whatsapp {
@@ -131,7 +132,7 @@ import { SectionsLayout } from '@Layouts';
 
   @media (min-width: 1024px) {
     .hero-container {
-      @apply text-left items-start;
+      @apply items-start text-left;
     }
 
     .empty-space {
