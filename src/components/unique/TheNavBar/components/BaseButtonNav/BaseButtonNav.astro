@@ -6,14 +6,6 @@ export interface Props {
 const { class: className } = Astro.props;
 ---
 
-<script>
-  const hamburger = document.querySelector('.hamburger');
-
-  hamburger?.addEventListener('click', function () {
-    hamburger.classList.toggle('active');
-  });
-</script>
-
 <div class:list={[className, 'button-nav-container']}>
   <button
     aria-label="Close"

@@ -1,3 +1,54 @@
+<!-- TheNavBar -->
+<script>
+const isNavBar = document.querySelector('.isNavBar');
+const hamburger = document.querySelector('.hamburger');
+
+if (isNavBar) {
+  const toggle = document.querySelector('.js-toggle-navbar');
+
+  toggle?.addEventListener('click', () => toggleNavbar());
+
+  function toggleNavbar() {
+    const nav = document.querySelector('.nav-container');
+
+    if (nav) {
+      const isEntering = !nav.classList.contains('is-slide');
+      const composedLinks = document.querySelectorAll('.composed-links a');
+
+      composedLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          toggleNavbar();
+          hamburger.classList.remove('active');
+        });
+      });
+      
+      if (isEntering) {
+        nav.classList.remove('is-invisible');
+        nav.classList.toggle('is-slide');
+
+        setTimeout(() => {
+          nav.classList.toggle('is-mobile');
+        }, 200);
+        return;
+      }
+
+      nav.classList.toggle('is-invisible');
+
+      setTimeout(() => {
+        nav.classList.toggle('is-mobile');
+        nav.classList.toggle('is-slide');
+      }, 300);
+    }
+  }
+}
+
+hamburger?.addEventListener('click', function () {
+  hamburger.classList.toggle('active');
+});
+</script>
+<!-- TheNavBar -->
+
+
 <script
   async
   src="https://www.googletagmanager.com/gtag/js?id=G-CDEL0CFP0E"

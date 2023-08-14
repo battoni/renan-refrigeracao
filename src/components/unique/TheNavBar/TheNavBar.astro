@@ -29,47 +29,6 @@ const navbarItems = [
 ];
 ---
 
-<script>
-  const isNavBar = document.querySelector('.isNavBar');
-  if (isNavBar) {
-    const toggle = document.querySelector('.js-toggle-navbar');
-
-    toggle?.addEventListener('click', () => toggleNavbar());
-
-    function toggleNavbar() {
-      const nav = document.querySelector('.nav-container');
-
-      if (nav) {
-        const isEntering = !nav.classList.contains('is-slide');
-        const composedLinks = document.querySelectorAll('.composed-links a');
-
-        composedLinks.forEach((link) => {
-          link.addEventListener('click', () => {
-            toggleNavbar();
-          });
-        });
-
-        if (isEntering) {
-          nav.classList.remove('is-invisible');
-          nav.classList.toggle('is-slide');
-
-          setTimeout(() => {
-            nav.classList.toggle('is-mobile');
-          }, 200);
-          return;
-        }
-
-        nav.classList.toggle('is-invisible');
-
-        setTimeout(() => {
-          nav.classList.toggle('is-mobile');
-          nav.classList.toggle('is-slide');
-        }, 300);
-      }
-    }
-  }
-</script>
-
 <nav class="nav-container isNavBar">
   <div class="nav">
     <a href="/">
