@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import { LogoWhite } from '@Assets';
 import { BaseText, BaseTextTypes } from '@BaseComponents';
 import { ComposedLinks } from '@ComposedComponents';
@@ -12,16 +12,16 @@ const footerItems = [
     href: '#inicio',
   },
   {
-    label: 'Quem atendemos',
+    label: 'Clientes',
     href: '#clientes',
   },
   {
-    label: 'Nossos Serviços',
-    href: '#servicos',
+    label: 'Quem Somos',
+    href: '#empresa',
   },
   {
-    label: 'Nosso Especialista',
-    href: '#empresa',
+    label: 'Serviços',
+    href: '#servicos',
   },
   {
     label: 'Contato',
@@ -35,9 +35,9 @@ const footerItems = [
     <SectionsLayout class="footer-content">
       <div class="logo-section">
         <Image
-          alt="Logo da Empresa Renan Refrigeração"
+          alt="Logo da Empresa Benedetti Elétrica"
           class="logo"
-          title="Renan Refrigeração"
+          title="Benedetti Elétrica"
           src={LogoWhite}
         />
       </div>
@@ -57,7 +57,7 @@ const footerItems = [
       class="copy-text text-center"
       tag={BaseTextTypes.TAGS.P}
     >
-      &copy; Todos os direitos reservados. Renan Refrigeração 2023. Desenvolvido
+      &copy; Todos os direitos reservados. Benedetti Elétrica 2024. Desenvolvido
       por <a
         href="https://guilherme.battoni.dev/"
         rel="noopener"

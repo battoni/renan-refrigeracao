@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import { Logo, Whatsapp } from '@Assets';
 import { BaseLink } from '@BaseComponents';
 import { ComposedLinks } from '@ComposedComponents';
@@ -15,12 +15,12 @@ const navbarItems = [
     href: '#clientes',
   },
   {
-    label: 'Serviços',
-    href: '#servicos',
+    label: 'Quem Somos',
+    href: '#empresa',
   },
   {
-    label: 'Empresa',
-    href: '#empresa',
+    label: 'Serviços',
+    href: '#servicos',
   },
   {
     label: 'Contato',
@@ -74,9 +74,9 @@ const navbarItems = [
   <div class="nav">
     <a href="/">
       <Image
-        alt="Renan Refrigeração logotipo"
+        alt="Benedetti Elétrica logotipo"
         class="logo"
-        title="Renan Refrigeração"
+        title="Benedetti Elétrica"
         src={Logo}
       />
     </a>
@@ -89,7 +89,7 @@ const navbarItems = [
 
     <BaseLink
       class="nav-button"
-      href="https://wa.me/message/CVQIECXMWBIPN1"
+      href="https://wa.link/dmsi6d"
       target="_blank"
       variation="blue"
     >
@@ -97,7 +97,9 @@ const navbarItems = [
         alt="Whatsapp"
         class="whatsapp"
         src={Whatsapp}
-      />Solicite um Orçamento
+      />
+
+      Solicite um Orçamento
     </BaseLink>
 
     <BaseButtonNav class="menu-bar js-toggle-navbar" />
@@ -109,12 +111,14 @@ const navbarItems = [
     @apply fixed
     z-50
     flex 
-    h-[80px] 
+    h-[68px] 
     w-screen
     items-center
     justify-around
     bg-whiteOpacity
     align-middle
+    shadow
+    backdrop-blur-sm
     transition-[height] duration-[0.3s] ease-[ease-in-out];
   }
 

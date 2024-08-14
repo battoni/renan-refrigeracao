@@ -1,12 +1,17 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import {
-  CamaraFria,
-  Balcao,
-  Limpeza,
-  CargaTermica,
   ArCondicionado,
+  Aterramento,
+  Balcao,
+  CamaraFria,
+  CargaTermica,
+  Eletrica,
   Geladeira,
+  Laudo,
+  Limpeza,
+  Painel,
+  Plan,
 } from '@Assets';
 import { BaseText, BaseTextTypes, BaseCard, BaseLink } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
@@ -22,7 +27,7 @@ const services = [
     image: Balcao,
     alt: 'Imagem de um mercado com um balcão á frente.',
     content:
-      'Manutenção Corretiva de Expositores Refrigerados e Frigoríficos, e  Câmaras Frias',
+      'Manutenção Corretiva de Expositores Refrigerados, Congelados e  Câmaras Frias',
     btnLink: '',
   },
   {
@@ -32,9 +37,9 @@ const services = [
     btnLink: '',
   },
   {
-    image: CargaTermica,
+    image: Eletrica,
     alt: 'Imagem de um homem com um computador na mão.',
-    content: 'Dimensionamento de Carga Térmica',
+    content: 'Instalações e Manutenções Elétricas',
     btnLink: '',
   },
   {
@@ -44,9 +49,27 @@ const services = [
     btnLink: '',
   },
   {
-    image: Geladeira,
+    image: Painel,
     alt: 'Imagem de um homem carregando uma geladeira.',
-    content: 'Manutenção de Freezer e Geladeira Doméstica',
+    content: 'Montagem de Painéis Elétricos',
+    btnLink: '',
+  },
+  {
+    image: Aterramento,
+    alt: 'Imagem de um homem carregando uma geladeira.',
+    content: 'Instalação e Medição de Aterramento',
+    btnLink: '',
+  },
+  {
+    image: Plan,
+    alt: 'Imagem de um homem carregando uma geladeira.',
+    content: 'Elaboração e Execução de Projetos Elétricos até 800KVA',
+    btnLink: '',
+  },
+  {
+    image: Laudo,
+    alt: 'Imagem de um homem carregando uma geladeira.',
+    content: 'Emissão de Laudos Térmicos',
     btnLink: '',
   },
 ];
@@ -115,7 +138,7 @@ const services = [
   }
 
   .card-image {
-    @apply max-h-[350px]
+    @apply h-[350px]
     w-full
     max-w-[350px]
     rounded-[80px_80px_0_80px]
@@ -157,8 +180,8 @@ const services = [
     .card-info {
       @apply bottom-[0]
       right-[0]
-      h-[230px]
-      w-[230px];
+      h-[190px]
+      w-[190px];
     }
 
     .card-paragraph {

@@ -1,23 +1,23 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import {
   CompanyIcon,
   HotelIcon,
   HouseIcon,
   IndustryIcon,
   MarketIcon,
-  ShopIcon,
+  TractorIcon,
 } from '@Assets';
 import { BaseCard, BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
 
 const clients = [
   {
-    icon: MarketIcon,
-    alt: 'Imagem de uma barraca de mercado.',
-    title: 'Supermercado',
+    icon: HouseIcon,
+    alt: 'Imagem de uma Residência',
+    title: 'Residências',
     paragraph:
-      'A Refrigeração e Climatização adequadas são fundamentais para o sucesso do negócio. Ajuda a manter a qualidade dos alimentos e bebidas, aumenta a vida útil dos produtos e reduz perdas e custos.',
+      'Oferecemos a você e sua família toda segurança ao prestar serviços na instalação e manutenção elétrica, bem como instalação de ar condicionado.',
   },
   {
     icon: HotelIcon,
@@ -27,32 +27,32 @@ const clients = [
       'Seus hóspedes merecem passar só bons momentos enquanto curtem suas acomodações. Conte com nossos serviços para que a estadia de seus clientes seja sempre a mais segura e agradável!',
   },
   {
-    icon: HouseIcon,
-    alt: 'Imagem de uma Residência',
-    title: 'Residências',
+    icon: MarketIcon,
+    alt: 'Imagem de uma barraca de mercado.',
+    title: 'Supermercado',
     paragraph:
-      'Oferecemos a você e sua família toda segurança ao prestar serviços de Refrigeração e Climatização: instalação e manutenção em ar-condicionado, geladeiras e freezer. Sua família merece o melhor!',
-  },
-  {
-    icon: ShopIcon,
-    alt: 'Imagem de uma pequeno estabelecimento de vendas.',
-    title: 'Pequenos Comércios',
-    paragraph:
-      'Investir na manutenção preventiva e corretiva dos equipamentos de Refrigeração é a chave do sucesso: garante a qualidade dos produtos, durabilidade dos equipamentos, satisfação e fidelidade dos clientes.',
-  },
-  {
-    icon: CompanyIcon,
-    alt: 'Imagem de um prédio empresarial.',
-    title: 'Empresas e Escritórios',
-    paragraph:
-      'A Refrigeração e Climatização são essenciais, pois podem influenciar diretamente na concentração, qualidade do trabalho realizado,  produtividade e o bem-estar dos seus colaboradores.',
+      'As instalações elétricas bem como as manutenções preventivas e corretivas são fundamentais para o sucesso do seu negócio. Uma refrigeração de qualidade ajuda a manter a qualidade dos alimentos e bebidas, aumenta a vida útil dos equipamentos e reduz perdas e danos.',
   },
   {
     icon: IndustryIcon,
     alt: 'Imagem de um prédio industrial.',
     title: 'Indústrias',
     paragraph:
-      'Conte conosco para ter instalações profissionais de alto nível, que extraem a melhor performance e aumentam a vida útil dos equipamentos, além de reduzir custos operacioniais.',
+      'Conte conosco para ter instalações profissionais que extraem a melhor performance e aumentam a vida útil dos equipamentos, além de reduzir custos operacionais.',
+  },
+  {
+    icon: TractorIcon,
+    alt: 'Imagem de um trator.',
+    title: 'Rural',
+    paragraph:
+      'Tenha instalações robustas que garantem o bom funcionamento dos seus equipamentos. Geradores de energia e um bom sistema de aterramento garantem a tranquilodade e previne sinistros.',
+  },
+  {
+    icon: CompanyIcon,
+    alt: 'Imagem de um prédio empresarial.',
+    title: 'Empresas e Escritórios',
+    paragraph:
+      'As boas instalações são essenciais. Sistemas de ar-condicionado funcionando adequadamente influenciam diretamente na concentração, qualidade do trabalho realizado, produtividade e o bem-estar dos seus colaboradores.',
   },
 ];
 ---
@@ -120,7 +120,7 @@ const clients = [
 
   .card-image {
     @apply mb-5
-    max-w-[64px];
+    max-w-[80px];
   }
 
   .card-title {
