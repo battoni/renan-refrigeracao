@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import { Whatsapp } from '@Assets';
 import { BaseText, BaseTextTypes, BaseLink } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
@@ -13,11 +13,11 @@ import { SectionsLayout } from '@Layouts';
     class="is-blue contact-title"
     tag={BaseTextTypes.TAGS.H6}
   >
-    E aí, pronto para fazer seu orçamento?
+    E aí, pronto para solicitar seu orçamento?
   </BaseText>
 
   <BaseLink
-    href="https://wa.me/message/CVQIECXMWBIPN1"
+    href="https://wa.link/dmsi6d"
     variation="blue"
   >
     <Image
@@ -26,7 +26,7 @@ import { SectionsLayout } from '@Layouts';
       src={Whatsapp}
       title=""
     />
-    Iniciar Orçamento
+    Entre em contato
   </BaseLink>
 </SectionsLayout>
 

@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import { Whatsapp, HeroBG } from '@Assets';
 import { BaseLink, BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
@@ -15,24 +15,26 @@ import { SectionsLayout } from '@Layouts';
     itemtype="http://schema.org/LocalBusiness"
   >
     <BaseText
+      class="!text-navyBlue"
       itemprop="name"
       tag={BaseTextTypes.TAGS.H1}
     >
-      Refrigeração e Climatização de qualidade é com a gente!
+      Instalação / manutenção elétrica de qualidade é com a gente!
     </BaseText>
     <div class="hero-p">
       <BaseText
+        class="!text-navyBlue"
         itemprop="description"
         tag={BaseTextTypes.TAGS.P}
       >
-        Atendimento profisisonal especializado em Refrigeração e Climatização,
-        soluções inteligentes para sua empresa e o conforto da sua família.
+        Atendimento profissional especializado em Elétrica Refrigeração,
+        soluções inteligentes para o seu negócio e sua casa.
       </BaseText>
     </div>
 
     <div class="hero-btn-container">
       <BaseLink
-        href="https://wa.me/message/CVQIECXMWBIPN1"
+        href="https://wa.link/dmsi6d"
         itemprop="url"
         target="_blank"
         variation="blue"
@@ -42,7 +44,9 @@ import { SectionsLayout } from '@Layouts';
           class="whatsapp"
           itemprop="image"
           src={Whatsapp}
-        />Entre em contato
+        />
+
+        Entre em contato
       </BaseLink>
 
       <BaseLink
@@ -117,7 +121,7 @@ import { SectionsLayout } from '@Layouts';
   }
 
   .hero-bg {
-    @apply absolute left-0 top-0 z-0 h-screen w-screen overflow-hidden object-cover;
+    @apply absolute right-0 top-0 z-0 h-screen w-screen overflow-hidden object-cover;
   }
 
   .whatsapp {
