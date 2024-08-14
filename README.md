@@ -1,4 +1,4 @@
-# Renan Refrigeração
+# Benedetti Elétrica
 
 ## Important links
 
