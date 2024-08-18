@@ -14,6 +14,7 @@ export { default as IndustryIcon } from './industry.svg';
 export { default as Laudo } from './laudos.png';
 export { default as Limpeza } from './service3-Limpeza.webp';
 export { default as Logo } from './logo-rr.png';
+export { default as Logo2 } from './logo-rr-two.png';
 export { default as LogoIcone } from './iconelogo.png';
 export { default as LogoWhite } from './logo-rr-white.png';
 export { default as MarketIcon } from './market.svg';
