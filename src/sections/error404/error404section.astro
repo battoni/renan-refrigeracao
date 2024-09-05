@@ -1,12 +1,15 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import { Logo } from '@Assets';
 import { BaseLink, BaseText, BaseTextTypes } from '@BaseComponents';
 import { SectionsLayout } from '@Layouts';
 ---
 
 <SectionsLayout class="section-error">
-  <Image src={Logo} alt="Renan Refrigeração" />
+  <Image
+    src={Logo}
+    alt="Benedetti Elétrica"
+  />
   <BaseText
     tag={BaseTextTypes.TAGS.H1}
     variation="blue"
